@@ -1,7 +1,7 @@
 # Add configuration values here, as shown below.
 incremental_consumer_id: 'service_1'
-incremental_adapter: 'mongo' # mongo, rest_client
-incremental_service_endpoint: '' # used by rest_client adapter
-incremental_service_token: '' # used by rest_client adapter
+incremental_adapter: 'mongo' # mongo, rest_api
+incremental_service_endpoint: '' # used by rest_api adapter
+incremental_service_token: '' # used by rest_api adapter
 
 mongodb_url: ''
