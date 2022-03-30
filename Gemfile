@@ -40,3 +40,10 @@ group :development do
   # gem "spring"
 end
 
+gem "figaro"
+
+gem 'mongoid'
+
+gem 'base62-rb'
+
+gem 'simple_command'

@@ -1,0 +1,22 @@
+development:
+  clients:
+    default:
+      uri: <%= ENV['mongodb_url'] %>
+      options:
+        server_selection_timeout: 5
+test:
+  clients:
+    default:
+      database: url_shortener_owarbv_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+production:
+  clients:
+    default:
+      uri: <%= ENV['mongodb_url'] %>
+      options:
+        server_selection_timeout: 5

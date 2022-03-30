@@ -66,8 +66,10 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    base62-rb (0.3.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
+    bson (4.14.1)
     builder (3.2.4)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -76,6 +78,8 @@ GEM
       reline (>= 0.2.7)
     digest (3.1.0)
     erubi (1.10.0)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -93,6 +97,12 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
+    mongo (2.17.0)
+      bson (>= 4.8.2, < 5.0.0)
+    mongoid (7.3.4)
+      activemodel (>= 5.1, < 7.1, != 7.0.0)
+      mongo (>= 2.10.5, < 3.0.0)
+      ruby2_keywords (~> 0.0.5)
     msgpack (1.4.5)
     net-imap (0.2.3)
       digest
@@ -147,6 +157,8 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    ruby2_keywords (0.0.5)
+    simple_command (0.1.0)
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)
@@ -161,10 +173,14 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  base62-rb
   bootsnap
   debug
+  figaro
+  mongoid
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  simple_command
   tzinfo-data
 
 RUBY VERSION
