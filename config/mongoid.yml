@@ -21,6 +21,6 @@ test:
 production:
   clients:
     default:
-      uri: <%= ENV['mongodb_url'] %>
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
         server_selection_timeout: 5
