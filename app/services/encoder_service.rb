@@ -2,9 +2,10 @@
 class EncoderService
   prepend SimpleCommand
 
+  SECRET_CHARSET = ENV['secret_charset']
+
   def initialize(num)
     @num = num
-    @secret_keyset = ENV['secret_charset']
   end
 
   def call
@@ -14,11 +15,11 @@ class EncoderService
   private
 
   def base62_encode
-    return @secret_keyset[0] if @num == 0
+    return SECRET_CHARSET[0] if @num == 0
     s = ''
-    base = @secret_keyset.length
+    base = SECRET_CHARSET.length
     while @num > 0
-      s << @secret_keyset[ @num.modulo(base)]
+      s << SECRET_CHARSET[ @num.modulo(base)]
       @num /= base
     end
     s.reverse
