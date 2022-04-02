@@ -104,6 +104,8 @@ GEM
       activemodel (>= 5.1, < 7.1, != 7.0.0)
       mongo (>= 2.10.5, < 3.0.0)
       ruby2_keywords (~> 0.0.5)
+    mongoid-locker (2.0.1)
+      mongoid (>= 5.0, < 8)
     msgpack (1.4.5)
     net-imap (0.2.3)
       digest
@@ -196,6 +198,7 @@ DEPENDENCIES
   debug
   figaro
   mongoid
+  mongoid-locker
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
   rspec-rails (~> 5.0.0)

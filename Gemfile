@@ -46,6 +46,10 @@ gem "figaro"
 
 gem 'mongoid'
 
+gem 'mongoid-locker'
+
 gem 'base62-rb'
 
 gem 'simple_command'
+
+gem 'apipie-rails'
