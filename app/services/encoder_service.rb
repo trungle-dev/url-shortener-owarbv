@@ -19,7 +19,7 @@ class EncoderService
     s = ''
     base = SECRET_CHARSET.length
     while @num > 0
-      s << SECRET_CHARSET[ @num.modulo(base)]
+      s << SECRET_CHARSET[@num.modulo(base)]
       @num /= base
     end
     s.reverse

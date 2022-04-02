@@ -3,15 +3,17 @@ module Utils
     attr_reader :errors, :error_code
 
     def initialize(errors, error_code = 500)
+      super(errors)
+
       @errors = errors
       @error_code = error_code
     end
 
-    def as_json(opts = {})
+    def as_json(_opts = {})
       if errors.is_a? String
-        return [{ message: errors }]
+        [{ message: errors }]
       elsif errors.is_a? Array
-        return errors.map do |msg|
+        errors.map do |msg|
           if msg.is_a? String
             { message: msg }
           else
