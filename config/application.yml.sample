@@ -3,5 +3,6 @@ incremental_consumer_id: 'service_1'
 incremental_adapter: 'mongo' # mongo, rest_api
 incremental_service_endpoint: '' # used by rest_api adapter
 incremental_service_token: '' # used by rest_api adapter
+secret_charset: 'nrU0VlRvXWad8ScMubkQHKPTfyFhGsCA7LO43gwtmoeYZJ5EINpzDjB61ix29q'
 
 mongodb_url: ''
