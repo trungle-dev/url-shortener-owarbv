@@ -16,13 +16,17 @@ class Incremental
   )
 
   def self.get_new_idx
+    consumer_id = ENV['incremental_consumer_id']
+
     current_inc = Incremental.by_service.first || Incremental.create(
       idx: ENV['incremental_min_value'].to_i,
-      consumer_id: ENV['incremental_consumer_id']
+      consumer_id: consumer_id
     )
 
     # Make noise if the maximum index is reached
-    raise 'Consumer reach maximum limit' if current_inc.idx >= ENV['incremental_max_value']
+    if current_inc.idx >= ENV['incremental_max_value']
+      raise "Consumer #{consumer_id} reach maximum limit #{current_inc.idx}"
+    end
 
     current_inc.with_lock do
       current_inc.idx += 1
