@@ -1,4 +1,6 @@
 class IncrementalService
+  prepend SimpleCommand
+
   def call
     # at the assigment scope using simple solution as opstimistic locking to generate uniq id
     Incremental.get_new_idx

@@ -1,4 +1,6 @@
 class ShortenerService
+  prepend SimpleCommand
+
   attr_reader :errors, :url, :url_shortener
 
   def initialize(url)
@@ -6,11 +8,12 @@ class ShortenerService
   end
 
   def call
-    idx = IncrementalService.call
-    shorten_key = Base62.encode(idx)
+    idx = IncrementalService.call.result
+    shorten_key = EncoderService.call(idx).result
+
     @url_shortener = UrlShortener.new(
       shorten_key: shorten_key,
-      full_url: @url
+      source_url: @url
     )
 
     unless @url_shortener.save
