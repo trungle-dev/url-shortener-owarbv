@@ -8,9 +8,16 @@ module Utils
     end
 
     def as_json(opts = {})
-      errors_arr = []
       if errors.is_a? String
         return [{ message: errors }]
+      elsif errors.is_a? Array
+        return errors.map do |msg|
+          if msg.is_a? String
+            { message: msg }
+          else
+            { message: msg.to_s }
+          end
+        end
       end
     end
   end
