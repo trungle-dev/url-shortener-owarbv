@@ -28,10 +28,10 @@ class Incremental
       raise "Consumer #{consumer_id} reach maximum limit #{current_inc.idx}"
     end
 
-    current_inc.with_lock do
-      current_inc.idx += 1
-      current_inc.save!
-    end
+    # current_inc.with_lock do
+    # end
+    current_inc.idx += 1
+    current_inc.save!
 
     current_inc.idx
   end
